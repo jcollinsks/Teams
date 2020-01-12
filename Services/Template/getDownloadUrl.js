@@ -8,18 +8,16 @@ module.exports = function getDownloadUrl(context, token, driveId, fileName) {
                     `${driveId}/root/children?$filter=name eq '${fileName}'`;
         context.log("DOWNLOAD URL ", url);
         try {
-            
+
             request.get(url, {
                 'auth': {
                     'bearer': token
                 }
             }, (error, response, body) => {
-
+                context.log("RESPONSE ",response);
                 if (!error && response && response.statusCode == 200) {
 
                     const result = JSON.parse(response.body);
-                    context.log("RESULT VALUE ",result.value);
-                    context.log("RESULT VALUE[0] ",result.value[0]);
                     if (result.value && result.value[0]) {
                         //context.log("RESULT VALUE ",result.value);
                         //context.log("RESULT VALUE[0] ",result.value[0]);
