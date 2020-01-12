@@ -21,6 +21,7 @@ module.exports = function getDownloadUrl(context, token, driveId, fileName) {
 
                     const result = JSON.parse(response.body);
                     context.log("RESULT ", result);
+                    context.log("RESULT VALUE ", result.value[0]);
                     if (result.value && result.value[0]) {
                         //context.log("RESULT VALUE ",result.value);
                         //context.log("RESULT VALUE[0] ",result.value[0]);
