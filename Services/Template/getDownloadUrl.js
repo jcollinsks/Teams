@@ -3,10 +3,10 @@ var request = require('request');
 module.exports = function getDownloadUrl(context, token, driveId, fileName) {
 
     return new Promise((resolve, reject) => {
-
+        context.log("FILENAME ", fileName);
         const url = `https://graph.microsoft.com/v1.0/drives/` + 
-                    `${driveId}/root/children?$filter=name+eq+'${fileName}'`;
-
+                    `${driveId}/root/children?$filter=name eq '${fileName}'`;
+        
         try {
 
             request.get(url, {
