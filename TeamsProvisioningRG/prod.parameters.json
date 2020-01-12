@@ -1,0 +1,34 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "appName": {
+        "value": "TeamsProvisioningProd"
+      },
+      "repoUrl": {
+        "value": "https://github.com/BobGerman/TeamsProvisioning.git"
+      },
+      "branch": {
+        "value": "prod"
+      },
+      "TENANT": {
+        "value": "a25d4ef1-c73a-4dc1-bdb1-9a342260f216"
+      },
+      "TENANT_NAME": {
+        "value": "bgtest18"
+      },
+      "CLIENT_ID": {
+        "value": "3b34741d-68fc-4465-b25e-d6fba3de701d"
+      },
+      "CLIENT_SECRET": {
+        "value": "@Microsoft.KeyVault(SecretUri=https://teamsprovisioning.vault.azure.net/secrets/client-secret/cd56ab45a33e47bfb0b091c75b99099a)"
+      },
+      "TEMPLATE_SITE_URL": {
+        "value": "/sites/TeamsProvisioning"
+      },
+      "TEMPLATE_LIB_NAME": {
+        "value": "Templates"
+      }
+    }
+  }
+  
