@@ -15,6 +15,7 @@ module.exports = function getDownloadUrl(context, token, driveId, fileName) {
                 }
             }, (error, response, body) => {
                 //context.log("RESPONSE ",response);
+                context.log("ERROR ",error);
                 context.log("RESPONSE STATUS", response.statusCode);
                 if (!error && response && response.statusCode == 200) {
 
