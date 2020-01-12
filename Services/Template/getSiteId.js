@@ -7,6 +7,7 @@ module.exports = function getSiteId(context, token, tenantName,
 
         const url = `https://graph.microsoft.com/v1.0/sites/` +
             `${tenantName}.sharepoint.com:${serverRelativeUrl}`;
+        context.log("SITE URL", url);
         try {
 
             request.get(url, {

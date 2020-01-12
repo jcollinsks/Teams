@@ -11,7 +11,7 @@ module.exports = async function (context, myQueueItem) {
     return new Promise((resolve, reject) => {
 
         context.log('JavaScript queue trigger function processed work item', myQueueItem);
-
+        context.log("Jeff's comment ", myQueueItem.jsonTemplate)
         if (myQueueItem && 
             myQueueItem.displayName &&
             myQueueItem.owner && 

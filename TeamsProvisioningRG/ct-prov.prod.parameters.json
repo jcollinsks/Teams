@@ -3,10 +3,10 @@
   "contentVersion": "1.0.0.0",
   "parameters": {
     "appName": {
-      "value": "JCTeamsProvisioning"
+      "value": "TeamsProvisioningCT"
     },
     "repoUrl": {
-      "value": "https://github.com/jcollinsks/TeamsProvisioning.git"
+      "value": "https://github.com/jcollinsks/Teams.git"
     },
     "branch": {
       "value": "prod"
