@@ -14,7 +14,8 @@ module.exports = function getDownloadUrl(context, token, driveId, fileName) {
                     'bearer': token
                 }
             }, (error, response, body) => {
-                context.log("RESPONSE ",response);
+                //context.log("RESPONSE ",response);
+                context.log("RESPONSE STATUS", response.statusCode);
                 if (!error && response && response.statusCode == 200) {
 
                     const result = JSON.parse(response.body);
