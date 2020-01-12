@@ -6,7 +6,7 @@ module.exports = function getDownloadUrl(context, token, driveId, fileName) {
         context.log("FILENAME ", fileName);
         const url = `https://graph.microsoft.com/v1.0/drives/` + 
                     `${driveId}/root/children?$filter=name eq '${fileName}'`;
-        
+        context.log("DOWNLOAD URL ", url);
         try {
 
             request.get(url, {
