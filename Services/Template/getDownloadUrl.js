@@ -18,9 +18,11 @@ module.exports = function getDownloadUrl(context, token, driveId, fileName) {
                 if (!error && response && response.statusCode == 200) {
 
                     const result = JSON.parse(response.body);
+                    context.log("RESULT VALUE ",result.value);
+                    context.log("RESULT VALUE[0] ",result.value[0]);
                     if (result.value && result.value[0]) {
-                        context.log("RESULT VALUE ",result.value);
-                        context.log("RESULT VALUE[0] ",result.value[0]);
+                        //context.log("RESULT VALUE ",result.value);
+                        //context.log("RESULT VALUE[0] ",result.value[0]);
                         resolve(result.value[0]["@microsoft.graph.downloadUrl"]);
                     } else {
                         reject(`File not found in getDownloadUrl: ${fileName}`);
