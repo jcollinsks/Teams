@@ -8,6 +8,7 @@ module.exports = function getDriveId(context, token, siteId,
         // Note: $filter does not work so get all the libraries
         const url = `https://graph.microsoft.com/v1.0/sites/` +
                     `${siteId}/drives`;
+        context.log("Drive ", url);
         try {
 
             request.get(url, {

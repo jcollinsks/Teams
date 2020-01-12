@@ -28,6 +28,7 @@ module.exports = function getTemplate(context, token, jsonTemplate,
         })
         .then((downloadUrl) => {
         // 4. Get the contents of the template file
+        context.log("Download URL", downloadUrl)
             return downloadDriveItem(context, token, downloadUrl);
         })
         .then((templateString) => {
