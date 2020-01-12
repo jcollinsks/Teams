@@ -23,18 +23,20 @@ module.exports = function getTemplate(context, token, jsonTemplate,
         })
         .then((driveId) => {
         // 3. Get the download URL for the template file
+            context.log("DRIVE ID ", driveId);
             return getDownloadUrl(context, token, driveId,
                 `${jsonTemplate}${settings().TEMPLATE_FILE_EXTENSION}`);
         })
         .then((downloadUrl) => {
         // 4. Get the contents of the template file
-        context.log("Download URL", downloadUrl)
+        context.log("Download URL", downloadUrl);
             return downloadDriveItem(context, token, downloadUrl);
         })
         .then((templateString) => {
 
         // 5. Parse the template; get owner's user ID
             template = JSON.parse(templateString.trimLeft());
+            context.log("TEMPLATE ", template);
             return getUserId (context, token, owner);
         })
         .then((ownerId) => {
